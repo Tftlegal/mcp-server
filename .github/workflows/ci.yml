@@ -2,11 +2,13 @@ name: CI
 on:
   push:
     branches:
-      - main
+      #- main
       - develop
+      - mcp-kali
   pull_request:
     branches:
-      - main
+      #- main
+      - mcp-kali
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
