@@ -1,0 +1,31 @@
+[Unit]
+Description=Kali MCP Server for llama.cpp
+After=network.target
+
+[Service]
+Type=simple
+User=root
+Group=root
+WorkingDirectory=/root
+
+# Указываем путь к вашему скрипту
+ExecStart=/root/mcp_server.sh
+
+# Автостарт после перезагрузки
+Restart=always
+RestartSec=5
+
+# Журнал systemd (journalctl)
+StandardOutput=journal
+StandardError=journal
+
+# Если хочешь дополнительно писать в файл:
+# StandardOutput=append:/var/log/mcp_server.log
+# StandardError=append:/var/log/mcp_server.log
+
+# Ограничения безопасности (по желанию)
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,12 @@
+#deb cdrom:[Kali GNU/Linux 2026.1rc3 _Kali-last-snapshot_ - Official amd64 NETINST with firmware 20260320-05:33]/ kali-rolling main non-free-firmware
+
+#deb http://http.kali.org/kali kali-rolling main contrib non-free non-free-firmware
+# deb-src http://http.kali.org/kali kali-rolling main contrib non-free non-free-firmware
+
+deb https://mirror.truenetwork.ru/kali/ kali-rolling main contrib non-free non-free-firmware
+
+# This system was installed using removable media.
+# The matching "deb cdrom" entries were disabled at the end
+# of the installation process by preseed.
+# For information about how to configure apt package sources,
+# see the sources.list(5) manual.
