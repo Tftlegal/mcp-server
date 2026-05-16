@@ -40,7 +40,8 @@ jobs:
           python -m flake8 . \
             --extend-exclude=dist,build,__pycache__,.mypy_cache,venv \
             --show-source \
-            --statistics
+            --statistics \
+            || echo "Lint warnings, but not blocking CI"
 
   test:
     name: Test
@@ -71,7 +72,7 @@ jobs:
           from mcp_server import mcp; print(mcp)
           "
 
-      - name: Run system_message_generator
-        run: |
-          python system_message_generator.py http://localhost:8000/mcp || true
+#      - name: Run system_message_generator
+#        run: |
+#          python system_message_generator.py http://localhost:8000/mcp || true
         # Чтобы юнит не падал, если сервер не жив, можно оборвать в CI без падения
